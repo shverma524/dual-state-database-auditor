@@ -1,0 +1,39 @@
+.venv/
+venv/
+__pycache__/
+.env
+blockchain/node_modules/
+blockchain/artifacts/
+blockchain/cache/
+data/epochs/*.json
+!data/epochs/.gitkeep
+
+# Python-generated files
+*.py[cod]
+__pycache__/
+
+# Local secrets and environment files
+.env
+.env.*
+
+# Local database, epoch proofs, and monitoring output
+data/epochs/*.json
+data/tamper_alerts.json
+
+# Local safety backups
+backup_before_hashing_fix_20261019_001745/
+app/merkle.py.backup_before_validation
+
+# Node.js dependencies and generated Hardhat files
+blockchain/node_modules/
+blockchain/artifacts/
+blockchain/cache/
+
+# macOS metadata
+.DS_Store
+
+# Keep the safe example configuration template
+!.env.example
+
+# Internal build guide — keep local, do not publish
+/COMPLETE_BUILD_GUIDE.md
