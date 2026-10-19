@@ -1,8 +1,12 @@
-# Dual-State Relational Database — End-to-End MVP
+﻿# Receipt reconciliation upgrade
+
+See DEMO_GUIDE.md for the tested SQLite demo. Run python -m demo.server --port 18877 and open http://127.0.0.1:18877. Original pipeline instructions follow.
+
+# Dual-State Relational Database â€” End-to-End MVP
 
 This project demonstrates a dual-state database auditing pipeline:
 
-**PostgreSQL records → trigger-based audit log → SHA-256 event hashes → Merkle tree and proofs → local blockchain root anchoring → independent verification → tamper detection.**
+**PostgreSQL records â†’ trigger-based audit log â†’ SHA-256 event hashes â†’ Merkle tree and proofs â†’ local blockchain root anchoring â†’ independent verification â†’ tamper detection.**
 
 This is an educational minimum viable product (MVP). Zero-knowledge proofs, public testnet deployment, and split-share anchoring are future extensions, not implemented features. The local Hardhat blockchain is a demonstration anchor, not an independently operated production blockchain.
 
@@ -105,7 +109,7 @@ Replace the example with the address printed by your deployment. Do not include 
 
 Keep PostgreSQL and the Hardhat node running. Start each process in a separate terminal from the project root. Activate `.venv` in each terminal.
 
-### Terminal A — API
+### Terminal A â€” API
 
 ```bash
 uvicorn app.api:app --reload --port 8000
@@ -113,7 +117,7 @@ uvicorn app.api:app --reload --port 8000
 
 API documentation: http://127.0.0.1:8000/docs
 
-### Terminal B — Asynchronous anchor worker
+### Terminal B â€” Asynchronous anchor worker
 
 ```bash
 python -m app.worker
@@ -121,7 +125,7 @@ python -m app.worker
 
 The worker processes audit events and anchors batches to the local blockchain.
 
-### Terminal C — Auditor dashboard
+### Terminal C â€” Auditor dashboard
 
 ```bash
 streamlit run app/dashboard.py
@@ -129,7 +133,7 @@ streamlit run app/dashboard.py
 
 Dashboard: http://localhost:8501
 
-### Terminal D — Optional integrity monitor
+### Terminal D â€” Optional integrity monitor
 
 ```bash
 python -m app.monitor
@@ -163,13 +167,13 @@ Use the dashboard or the API documentation at `/docs` to submit a `POST /records
 
 ### 2. Wait for anchoring
 
-Wait approximately 5–10 seconds for a small batch to flush and anchor. A batch of 16 audit events reaches the configured batch size, but actual timing depends on the worker and environment.
+Wait approximately 5â€“10 seconds for a small batch to flush and anchor. A batch of 16 audit events reaches the configured batch size, but actual timing depends on the worker and environment.
 
 ### 3. Verify the record
 
 Use the dashboard to verify the record. A successfully verified, unchanged record should show `VALID` when its proof and anchor are available.
 
-### 4. Test tamper detection — demo database only
+### 4. Test tamper detection â€” demo database only
 
 **Warning:** The following steps modify database data. Use only a disposable local demo database, never real or production data.
 
@@ -237,3 +241,4 @@ Do not use this procedure on production data. If an operation fails while the tr
 ## Project status
 
 This repository demonstrates the core database-auditing and local blockchain-anchoring workflow. Unit tests cover selected hashing and Merkle proof cases; complete integration, performance, scalability, and fault-recovery testing should be performed separately before making production-readiness claims.
+

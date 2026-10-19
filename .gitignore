@@ -37,3 +37,9 @@ blockchain/cache/
 
 # Internal build guide — keep local, do not publish
 /COMPLETE_BUILD_GUIDE.md
+
+# Generated receipt laboratory data
+*.sqlite
+*.sqlite-journal
+data/presentation-*/
+upgrade-backups/

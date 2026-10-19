@@ -1,0 +1,142 @@
+[
+  {
+    "route": "/write",
+    "request": {
+      "id": 1,
+      "amount": "250"
+    },
+    "response": {
+      "receipt": 1
+    }
+  },
+  {
+    "route": "/write",
+    "request": {
+      "id": 2,
+      "amount": "100"
+    },
+    "response": {
+      "receipt": 2
+    }
+  },
+  {
+    "route": "/verify",
+    "request": {
+      "id": 1
+    },
+    "response": {
+      "status": "PENDING_ANCHOR",
+      "detail": "Witnessed state agrees but has no checkpoint yet",
+      "pending_seconds": 0.04
+    }
+  },
+  {
+    "route": "/anchor",
+    "request": {},
+    "response": {
+      "status": "ANCHORED",
+      "id": 1,
+      "root": "0f77197867b81499e2e79eb288176c1b9c928827ea5baad46bebd6ce836e7d0e",
+      "created": 1792438995.493266,
+      "items": [
+        {
+          "seq": 1,
+          "proof": [
+            {
+              "sibling": "11e9b56224b24907bdb1fb9e28f2300ad945ad26ddf5e3aee2de2a141832ea08",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "seq": 2,
+          "proof": [
+            {
+              "sibling": "a86afe5531a8246a818d87e007b4a1cd0f60779402ba3cbc2fa953fd77d49a9f",
+              "side": "left"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "/verify",
+    "request": {
+      "id": 1
+    },
+    "response": {
+      "status": "VERIFIED",
+      "detail": "Live row, receipt, audit event and checkpoint agree",
+      "epoch": 1,
+      "root": "0f77197867b81499e2e79eb288176c1b9c928827ea5baad46bebd6ce836e7d0e",
+      "proof": [
+        {
+          "sibling": "11e9b56224b24907bdb1fb9e28f2300ad945ad26ddf5e3aee2de2a141832ea08",
+          "side": "right"
+        }
+      ],
+      "leaf": "a86afe5531a8246a818d87e007b4a1cd0f60779402ba3cbc2fa953fd77d49a9f"
+    }
+  },
+  {
+    "route": "/write",
+    "request": {
+      "id": 1,
+      "amount": "300"
+    },
+    "response": {
+      "receipt": 3
+    }
+  },
+  {
+    "route": "/verify",
+    "request": {
+      "id": 1
+    },
+    "response": {
+      "status": "PENDING_ANCHOR",
+      "detail": "Witnessed state agrees but has no checkpoint yet",
+      "pending_seconds": 0.269
+    }
+  },
+  {
+    "route": "/anchor",
+    "request": {},
+    "response": {
+      "status": "ANCHORED",
+      "id": 2,
+      "root": "b8b2e62428fe3f85c5418dfb68258bb90807f5b1a56ef7a6b3fafdded4f6f98c",
+      "created": 1792438995.8943336,
+      "items": [
+        {
+          "seq": 3,
+          "proof": []
+        }
+      ]
+    }
+  },
+  {
+    "route": "/attack",
+    "request": {
+      "id": 1,
+      "kind": "rewrite-both"
+    },
+    "response": {
+      "status": "AUDIT_TAMPERED",
+      "detail": "Audit event differs from its witness receipt"
+    }
+  },
+  {
+    "route": "/anchor",
+    "request": {},
+    "response": {
+      "status": "ANCHOR_BLOCKED",
+      "record_id": 1,
+      "reason": {
+        "status": "AUDIT_TAMPERED",
+        "detail": "Audit event differs from its witness receipt"
+      }
+    }
+  }
+]

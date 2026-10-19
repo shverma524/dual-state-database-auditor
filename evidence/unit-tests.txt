@@ -1,0 +1,37 @@
+test_canonical_json_rejects_decimal (test_hashing.HashingTests.test_canonical_json_rejects_decimal) ... ok
+test_canonical_json_rejects_nan (test_hashing.HashingTests.test_canonical_json_rejects_nan) ... ok
+test_canonical_json_sorts_keys (test_hashing.HashingTests.test_canonical_json_sorts_keys) ... ok
+test_changed_amount_changes_hash (test_hashing.HashingTests.test_changed_amount_changes_hash) ... ok
+test_changed_record_fields_change_hash (test_hashing.HashingTests.test_changed_record_fields_change_hash) ... ok
+test_equivalent_money_formats_hash_identically (test_hashing.HashingTests.test_equivalent_money_formats_hash_identically) ... ok
+test_event_hash_is_deterministic (test_hashing.HashingTests.test_event_hash_is_deterministic) ... ok
+test_excess_money_precision_is_rejected (test_hashing.HashingTests.test_excess_money_precision_is_rejected) ... ok
+test_non_finite_money_is_rejected (test_hashing.HashingTests.test_non_finite_money_is_rejected) ... ok
+test_sha256_known_vector (test_hashing.HashingTests.test_sha256_known_vector) ... ok
+test_empty_tree_is_rejected (test_merkle.TestMerkleTree.test_empty_tree_is_rejected) ... ok
+test_even_and_odd_leaf_counts (test_merkle.TestMerkleTree.test_even_and_odd_leaf_counts) ... ok
+test_invalid_side_fails (test_merkle.TestMerkleTree.test_invalid_side_fails) ... ok
+test_single_leaf (test_merkle.TestMerkleTree.test_single_leaf) ... ok
+test_tampered_leaf_fails (test_merkle.TestMerkleTree.test_tampered_leaf_fails) ... ok
+test_tampered_sibling_fails (test_merkle.TestMerkleTree.test_tampered_sibling_fails) ... ok
+test_database_rollback (test_receipts.ReceiptTests.test_database_rollback) ... ok
+test_legitimate_delete (test_receipts.ReceiptTests.test_legitimate_delete) ... ok
+test_legitimate_update_is_pending (test_receipts.ReceiptTests.test_legitimate_update_is_pending) ... ok
+test_missing_audit (test_receipts.ReceiptTests.test_missing_audit) ... ok
+test_no_laundering (test_receipts.ReceiptTests.test_no_laundering) ... ok
+test_odd_merkle_batch (test_receipts.ReceiptTests.test_odd_merkle_batch) ... ok
+test_orphan_receipt (test_receipts.ReceiptTests.test_orphan_receipt) ... ok
+test_pending_then_verified (test_receipts.ReceiptTests.test_pending_then_verified) ... ok
+test_precision_and_nan (test_receipts.ReceiptTests.test_precision_and_nan) ... ok
+test_proof_damage (test_receipts.ReceiptTests.test_proof_damage) ... ok
+test_restart (test_receipts.ReceiptTests.test_restart) ... ok
+test_row_and_audit_rewrite (test_receipts.ReceiptTests.test_row_and_audit_rewrite) ... ok
+test_unknown_and_empty (test_receipts.ReceiptTests.test_unknown_and_empty) ... ok
+test_unlogged_delete (test_receipts.ReceiptTests.test_unlogged_delete) ... ok
+test_unlogged_edit (test_receipts.ReceiptTests.test_unlogged_edit) ... ok
+test_unwitnessed_insert_blocks_anchor (test_receipts.ReceiptTests.test_unwitnessed_insert_blocks_anchor) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.548s
+
+OK

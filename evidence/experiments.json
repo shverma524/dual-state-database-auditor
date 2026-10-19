@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-10-19T19:32:36Z",
+  "python": "3.13.15",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "mode": "SQLite receipt laboratory; local witness simulation",
+  "benchmark": [
+    {
+      "records": 10,
+      "write_median_ms": 5.519,
+      "anchor_ms": 8.474,
+      "verify_median_ms": 0.509,
+      "proof_siblings": 4
+    },
+    {
+      "records": 100,
+      "write_median_ms": 6.085,
+      "anchor_ms": 110.088,
+      "verify_median_ms": 1.061,
+      "proof_siblings": 7
+    },
+    {
+      "records": 300,
+      "write_median_ms": 6.842,
+      "anchor_ms": 4279.445,
+      "verify_median_ms": 12.059,
+      "proof_siblings": 9
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "Unlogged edit",
+      "status": "TAMPER_DETECTED"
+    },
+    {
+      "scenario": "Row and audit rewrite",
+      "status": "AUDIT_TAMPERED"
+    },
+    {
+      "scenario": "Unlogged delete",
+      "status": "TAMPER_DETECTED"
+    },
+    {
+      "scenario": "Audit erasure",
+      "status": "EVIDENCE_MISSING"
+    }
+  ],
+  "limitations": "Single run per size; warm OS caches; no PostgreSQL or network blockchain measurements. Verification scans history; only Merkle path evaluation is logarithmic in batch size."
+}
